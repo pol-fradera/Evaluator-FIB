@@ -4,12 +4,13 @@
 
 #include "Problema.hh"
 
+
 Problema::Problema(){
     t = 0;  //enviaments totals
     e = 0; //enviaments amb èxit
     ratio = 1;
 }
 
-void Problema::escriure_problema(Problema p) const {
+void Problema::escriure() const {
     cout << '(' << t << ',' << e << ',' << ratio << ')' << endl;
 }

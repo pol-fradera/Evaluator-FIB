@@ -8,6 +8,7 @@
 
 #ifndef NO_DIAGRAM 
 #include "BinTree.hh"
+#include <iostream>
 #endif
 
 /** @class Sessio
@@ -18,8 +19,14 @@ class Sessio {
 
 private:
     
-  string s;
   BinTree<string> ap;
+  
+  
+  static int size(const BinTree<string>& a);
+  
+  static BinTree<string> llegir_bintree();
+  
+  static void escriure_BinTree(const BinTree<string>& a);
   
 public:
     
@@ -51,6 +58,8 @@ public:
   void afegir_problemes();
     
   
+  
+  
   // Escriptura
     
   /** @brief Operació d'escriptura d'una sessió.
@@ -60,6 +69,19 @@ public:
       problemes, seguint la seva estructura de prerequisits en postordre.
   */
   void escriure() const;
+  
+  
+  void llegir();
+  
+  
+  
 
+  
+  
+  int mida() const;
+
+  
+    
+  
 };
 #endif

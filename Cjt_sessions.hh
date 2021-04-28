@@ -9,6 +9,8 @@
 
 #ifndef NO_DIAGRAM 
 #include <string>
+#include <map>
+#include <iostream>
 #endif
 
 /** @class Cjt_sessions
@@ -55,7 +57,7 @@ public:
       \pre <em>cert</em>
       \post Indica si el conjunt conté la sessio s.
   */
-  bool existeix_sessio(string s);
+  bool existeix_sessio(string s) const;
     
     
   // Lectura i escriptura
@@ -85,6 +87,6 @@ public:
       mostrant el nombre de problemes que la formen i els identificadors d'aquests 
       problemes, seguint la seva estructura de prerequisits en postordre.
   */
-  void escriure_sessio(string s);
+  void escriure_sessio(string s) const;
 };
 #endif

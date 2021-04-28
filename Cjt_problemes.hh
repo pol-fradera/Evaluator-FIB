@@ -19,7 +19,7 @@ class Cjt_problemes {
 
 private:
   
-  map<string,Problema> mp;
+  map<string, Problema> mp;
 
 public:
 
@@ -34,7 +34,6 @@ public:
   Cjt_problemes();
   
    
-  
   //Modificadores
   
   /** @brief Afageix un problema al conjunt de problemes.
@@ -44,6 +43,9 @@ public:
       després de ser afegit al paràmetre implícit.
   */  
   void nou_problema(string p);
+  
+  
+  //Consultores
 
   /** @brief Consulta el nombre de problemes del conjunt. 
       \pre <em>cert</em>
@@ -51,26 +53,24 @@ public:
   */
   int mida() const;
   
-  //Consultores
-  
   /** @brief Consulta si el problema p es troba al conjunt. 
       \pre <em>cert</em>
       \post Indica si el conjunt conté el problema p.
   */
-  bool existeix_problema(string p);
+  bool existeix_problema(string p) const;
   
   /** @brief Consulta la sessio del problema p en el curs amb identificador c. 
       \pre Existeix el curs c i el problema p existeix i pertany al curs c.
       \post S'ha escrit pel canal estàndard de sortida l'identificador de la 
       sessió on es realitza el problema p en el curs c.
   */
-  void sessio_problema(int c, string p);
+  void sessio_problema(int c, string p) const;
   
   /** @brief Consulta si el problema p es troba al curs c. 
       \pre <em>cert</em>
       \post Indica si el curs c conté el problema p.
   */
-  bool pertany_curs(int c, string p);
+  bool pertany_curs(int c, string p) const;
 
     
   // Lectura i escriptura
@@ -99,6 +99,6 @@ public:
       mostrant el nombre  d'enviaments totals i el nombre e d'enviaments amb èxit.
       També s'ha escrit, per cada problema, el seu ràtio (t + 1)/(e + 1).      
   */  
-  void escriure_problema(string p);
+  void escriure_problema(string p) const;
 };
 #endif

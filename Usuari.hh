@@ -17,9 +17,11 @@
 */
 
 class Usuari {  
-
+    
+    
 private:
   
+    int env_tot;
   
   
 public:

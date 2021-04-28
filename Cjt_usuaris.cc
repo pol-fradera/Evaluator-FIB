@@ -3,6 +3,8 @@
 */
 
 #include "Cjt_usuaris.hh"
+
+Cjt_usuaris::Cjt_usuaris() {}
  
 void Cjt_usuaris::llegir_usuaris() {
     int n;

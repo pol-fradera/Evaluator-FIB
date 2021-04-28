@@ -9,6 +9,7 @@
 
 #ifndef NO_DIAGRAM 
 #include <vector>
+#include <iostream>
 #endif
 
 /** @class Curs
@@ -16,7 +17,9 @@
 */
 class Curs {
 
-  Cjt_sessions cse;
+  vector<string> vs;
+  
+  int us_comp, us_ins; 
 
 public:
   //Constructores
@@ -60,6 +63,7 @@ public:
   */
   int usuaris_inscrits();
   
+  
   // Escriptura
 
   /** @brief Operació d'escriptura d'un curs.
@@ -70,6 +74,8 @@ public:
       i els seus identificadors, en el mateix ordre que es van llegir quan es va crear el curs.
   */
   void escriure() const;
+  
+  void llegir(int m);
 
 };
 #endif
