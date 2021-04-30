@@ -22,6 +22,8 @@ private:
     
   vector<Curs> vcurs;
   
+//   static int cerca_dicot(const vector<Curs>& vcurs, int left, int right, int c);
+  
 public:
 
   //Constructora
@@ -47,6 +49,8 @@ public:
       pel canal estàndard de sortida un missatge d'error.
   */  
   void nou_curs();
+  
+  void sumar_usuari(int c);
       
   
     //Consultores
@@ -55,7 +59,7 @@ public:
       \pre <em>cert</em>
       \post Indica si el conjunt conté el curs c.
   */
-  bool existeix_curs(int c);
+  bool existeix_curs(int c) const;
 
   /** @brief Consulta el nombre de cursos del conjunt. 
       \pre <em>cert</em>
@@ -94,6 +98,6 @@ public:
       el nombre d'usuaris inscrits actualment, el nombre de sessions que el formen 
       i els seus identificadors, en el mateix ordre que es van llegir quan es va crear el curs.
   */
-  void escriure_curs(int c);
+  void escriure_curs(int c) const;
 };
 #endif

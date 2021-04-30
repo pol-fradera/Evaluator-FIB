@@ -10,6 +10,7 @@
 
 #ifndef NO_DIAGRAM 
 #include <string>
+#include <map>
 #endif
 
 /** @class Usuari
@@ -21,8 +22,10 @@ class Usuari {
     
 private:
   
-    int env_tot;
-  
+  int env_tot, pr_res, pr_int, id_curs;
+//   map<string, int> mpr_res;
+
+//   set<string> spr_env;
   
 public:
     
@@ -42,6 +45,15 @@ public:
   */
   Usuari(string u);
 
+  //Modificadores
+  
+  void inscriure(int c);
+  
+  // Consultores
+  
+  bool esta_inscrit() const;
+  
+  void consulta_curs() const;
   
   // Escriptura
     

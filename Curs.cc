@@ -8,6 +8,15 @@ Curs::Curs() {
     us_comp = us_ins = 0;
 }
 
+void Curs::sumar_usuari() {
+    ++us_ins;
+    cout << us_ins << endl;
+}
+
+int Curs::usuaris_inscrits() const {
+    return us_ins;
+}
+
 void Curs::llegir(int m) {
     for (int i = 0; i < m; ++i) {
         string s;

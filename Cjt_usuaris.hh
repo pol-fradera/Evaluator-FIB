@@ -85,13 +85,13 @@ public:
       \pre <em>cert</em>
       \post Indica si el conjunt conté l'usuari u.
   */
-  bool existeix_usuari(string u);
+  bool existeix_usuari(string u) const;
   
   /** @brief Consulta si l'usuari es troba inscrit en algun curs no completat. 
       \pre <em>cert</em>
       \post Indica si l'usuari u està inscrit en algun curs no completat.
   */
-  bool esta_inscrit_nc(string u);
+  bool esta_inscrit_nc(string u) const;
   
   /** @brief Consulta si l'usuari es troba inscrit en algun curs. 
       \pre <em>cert</em>
@@ -118,7 +118,7 @@ public:
       curs en que l'usuari u està inscrit o un zero si no està inscrit en 
       cap curs.
   */
-  void curs_usuari(string u);
+  void curs_usuari(string u) const;
 
   /** @brief Es llisten en ordre creixent per identificador els problemes 
       solucionats amb exit per l'usuari. 
@@ -128,7 +128,7 @@ public:
       l'usuari u. Tambe s'ha escrit el nombre d'enviaments realitzats per 
       l'usuari a cada problema del llistat.
   */
-  void problemes_resolts(string u);
+  void problemes_resolts(string u) const;
   
   /** @brief Es llisten en ordre creixent per identificador els problemes que 
       l'usuari no ha solucionat. 
@@ -139,7 +139,7 @@ public:
       escrit el nombre d'enviaments realitzats per l'usuari a cada problema del
       llistat.
   */
-  void problemes_enviables(string u);
+  void problemes_enviables(string u) const;
   
   /** @brief Consulta el nombre d'usuaris del conjunt. 
       \pre <em>cert</em>
@@ -177,6 +177,6 @@ public:
       l'identificador del curs en que està inscrit o un zero i no està inscrit en 
       cap curs.
   */
-  void escriure_usuari(string u);
+  void escriure_usuari(string u) const;
 };
 #endif

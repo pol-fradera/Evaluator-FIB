@@ -37,49 +37,61 @@ int main() {
     cin >> comanda;
     while (comanda != "fin") {
         string p, s, u;     // Identificador del problema, de la sessó i de l'usuari
-      //int c, r;   // Identificador del curs i nota del resultat de l'enviament
+        int c; //r;   // Identificador del curs i nota del resultat de l'enviament
         if (comanda == "np" or comanda == "nuevo_problema") {
             cin >> p;
             cout << '#' << comanda << ' ' << p << endl;
             if (not pr.existeix_problema(p)) pr.nou_problema(p);
             else cout << "error: el problema ya existe" << endl;
         }
-        /*else if (comanda == "ns" or comanda == "nueva_sesion") {
+        else if (comanda == "ns" or comanda == "nueva_sesion") {
             cin >> s;
-            if (not se.existeix_sessio(s)) se.nova_sessio(s);            
-        }
+            cout << '#' << comanda << ' ' << s << endl;
+            if (not se.existeix_sessio(s)) se.nova_sessio(s);     
+            else cout << "error: la sesion ya existe" << endl;
+        }/*
         else if (comanda == "nc" or comanda == "nuevo_curso") {
             cu.nou_curs();
-        }
+        }*/
         else if (comanda == "a" or comanda == "alta_usuario") {
             cin >> u;
+            cout << '#' << comanda << ' ' << u << endl;
             if (not us.existeix_usuari(u)) us.alta_usuari(u);
-            else cout << " error" << endl;
+            else cout << "error: el usuario ya existe" << endl;
         }
         else if (comanda == "b" or comanda == "baja_usuario") {
             cin >> u;
+            cout << '#' << comanda << ' ' << u << endl;
             if (us.existeix_usuari(u)) us.baixa_usuari(u);
-            else cout << " error" << endl;
+            else cout << "error: el usuario no existe" << endl;
         }
         else if (comanda == "i" or comanda == "inscribir_curso") {
             cin >> u >> c;
-            if (us.existeix_usuari(u) and cu.existeix_curs(c) and not us.esta_inscrit_nc(u)) us.inscriure_curs(u, c);
-            else cout << " error" << endl;
+            cout << '#' << comanda << ' ' << u << ' ' << c << endl;
+            if (not us.existeix_usuari(u)) cout << "error: el usuario no existe" << endl;
+            else if (not cu.existeix_curs(c)) cout << "error: el curso no existe" << endl;
+            else if (us.esta_inscrit_nc(u)) cout << "error: usuario inscrito en otro curso" << endl;
+            else {
+                us.inscriure_curs(u, c);
+                cu.sumar_usuari(c);
+            }
         }
         else if (comanda == "cu" or comanda == "curso_usuario") {
             cin >> u;
+            cout << '#' << comanda << ' ' << u << endl;
             if (us.existeix_usuari(u)) us.curs_usuari(u);
-            else cout << " error" << endl;
-        }
+            else cout << "error: el usuario no existe" << endl;
+        }/*
         else if (comanda == "sp" or comanda == "sesion_problema") {
             cin >> c >> p;
             if (cu.existeix_curs(c) and pr.existeix_problema(p) and pr.pertany_curs(c, p)) pr.sessio_problema(c, p);
             else cout << " error" << endl;
-        }            
+        }           
         else if (comanda == "pr" or comanda == "problemas_resueltos") {
             cin >> u;
+            cout << '#' << comanda << ' ' << u << endl;
             if (us.existeix_usuari(u)) us.problemes_resolts(u);
-            else cout << " error" << endl;
+            else cout << "error: el usuario no existe" << endl;
         }
         else if (comanda == "pe" or comanda == "problemas_enviables") {
             cin >> u;
@@ -115,17 +127,22 @@ int main() {
             cout << '#' << comanda << endl;
             cu.llistar_cursos();
         }
-        /*else if (comanda == "ec" or comanda == "escribir_curso") {
+        else if (comanda == "ec" or comanda == "escribir_curso") {
             cin >> c;
+            cout << '#' << comanda << ' ' << c << endl;
             if (cu.existeix_curs(c)) cu.escriure_curs(c);
-            else cout << " error" << endl;
+            else cout << "error: el curso no existe" << endl;
         }
-        else if (comanda == "lu" or comanda == "listar_usuarios") us.llistar_usuaris();
+        else if (comanda == "lu" or comanda == "listar_usuarios") {
+            cout << '#' << comanda << endl;
+            us.llistar_usuaris();
+        }
         else if (comanda == "eu" or comanda == "escribir_usuario") {
             cin >> u;
+            cout << '#' << comanda << ' ' << u << endl;
             if (us.existeix_usuari(u)) us.escriure_usuari(u);
-            else cout << " error" << endl;
-        }*/
+            else cout << "error: el usuario no existe" << endl;
+        }
         cin >> comanda;
     }
 }

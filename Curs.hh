@@ -61,7 +61,7 @@ public:
       \pre <em>cert</em>
       \post El resultat és el nombre de d'usuaris del paràmetre implícit.
   */
-  int usuaris_inscrits();
+  int usuaris_inscrits() const;
   
   
   // Escriptura

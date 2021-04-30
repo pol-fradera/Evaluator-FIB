@@ -7,11 +7,11 @@
 Cjt_sessions::Cjt_sessions() {}
 
 
-
 void Cjt_sessions::nova_sessio(string s) {
     Sessio se;
     se.llegir();
     ms[s] = se;
+    cout << ms.size() << endl;
 }
 
 bool Cjt_sessions::existeix_sessio(string s) const {
@@ -23,9 +23,9 @@ bool Cjt_sessions::existeix_sessio(string s) const {
 void Cjt_sessions::llegir_sessions() {
     int n;
     cin >> n;
-    string s;
     Sessio se;
     for (int i = 0; i < n; ++i) {
+        string s;
         cin >> s;
         se.llegir();
         ms[s] = se;
