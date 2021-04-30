@@ -9,6 +9,7 @@
 #ifndef NO_DIAGRAM 
 #include "BinTree.hh"
 #include <iostream>
+#include <set>
 #endif
 
 /** @class Sessio
@@ -21,10 +22,11 @@ private:
     
   BinTree<string> ap;
   
+  set<string> sp;
   
   static int size(const BinTree<string>& a);
   
-  static BinTree<string> llegir_bintree();
+  BinTree<string> llegir_bintree();
   
   static void escriure_BinTree(const BinTree<string>& a);
   
@@ -57,7 +59,13 @@ public:
   */
   void afegir_problemes();
     
+  // Consultores
   
+  int mida() const;
+  
+  bool conte_problema(string p) const;
+  
+  string problemes_env() const;
   
   
   // Escriptura
@@ -72,14 +80,6 @@ public:
   
   
   void llegir();
-  
-  
-  
-
-  
-  
-  int mida() const;
-
   
     
   

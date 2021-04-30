@@ -69,7 +69,7 @@ public:
       curs c i s'ha escrit pel canal estàndard de sortida el nombre d'usuaris 
       inscrits en el curs c després de ser afegit.
   */
-  void inscriure_curs(string u, int c);
+  void inscriure_curs(string u, int c, const Cjt_cursos& cu, const Cjt_sessions& se);
   
   /** @brief Esborra un usuari d'un curs.
       \pre El paràmetre implícit conté un usuari amb l'identificador u, el curs c 

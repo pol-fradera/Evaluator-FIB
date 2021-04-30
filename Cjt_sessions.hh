@@ -58,6 +58,10 @@ public:
       \post Indica si el conjunt conté la sessio s.
   */
   bool existeix_sessio(string s) const;
+  
+  bool sessio_problema(string s, string p) const;
+  
+  string problemes_env(string s) const;
     
     
   // Lectura i escriptura

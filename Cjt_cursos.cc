@@ -28,6 +28,19 @@ bool Cjt_cursos::existeix_curs(int c) const {
     if (c > 0 and c <= vcurs.size()) return true;
     else return false;
 }
+/*
+bool Cjt_cursos::pertany_curs(int c, string p) const {
+    if (vcurs[c].conte_problema(p)) return true;
+    else return false;
+}*/
+
+void Cjt_cursos::sessio_problema(int c, string p, const Cjt_sessions& se) const {
+    vcurs[c-1].sessio_problema(p, se);
+}
+
+void Cjt_cursos::problemes_env(int c, vector<string>& vp, const Cjt_sessions& se) const {
+    vcurs[c-1].problemes_env(vp, se);
+}
 
 void Cjt_cursos::llegir_cursos() {
     int n;

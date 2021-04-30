@@ -63,6 +63,12 @@ public:
   */
   int usuaris_inscrits() const;
   
+  bool conte_problema(string p) const;
+  
+  void sessio_problema(string p, const Cjt_sessions& se) const;
+  
+  void problemes_env(vector<string>& vp, const Cjt_sessions& se) const;
+  
   
   // Escriptura
 

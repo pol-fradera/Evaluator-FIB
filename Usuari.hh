@@ -6,7 +6,7 @@
 #define _USUARI_HH_
 
 #include "Cjt_cursos.hh"
-#include "Cjt_problemes.hh"
+#include "Cjt_sessions.hh"
 
 #ifndef NO_DIAGRAM 
 #include <string>
@@ -23,7 +23,8 @@ class Usuari {
 private:
   
   int env_tot, pr_res, pr_int, id_curs;
-//   map<string, int> mpr_res;
+  
+  map<string, int> mpr_env;
 
 //   set<string> spr_env;
   
@@ -47,13 +48,17 @@ public:
 
   //Modificadores
   
-  void inscriure(int c);
+  void inscriure(int c, const Cjt_cursos& cu, const Cjt_sessions& se);
   
   // Consultores
   
   bool esta_inscrit() const;
   
   void consulta_curs() const;
+  
+  void problemes_resolts() const;
+  
+  void problemes_env() const;
   
   // Escriptura
     

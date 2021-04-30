@@ -14,6 +14,7 @@ int Sessio::size(const BinTree<string>& a) {
 BinTree<string> Sessio::llegir_bintree() {
   string s;
   cin >> s;
+  sp.insert(s);
   if (s == "0") return BinTree<string> ();
   return BinTree<string> (s, llegir_bintree(), llegir_bintree());
 }
@@ -32,6 +33,16 @@ void Sessio::escriure_BinTree(const BinTree<string> &a)
 
 int Sessio::mida() const {
     return size(ap);
+}
+
+bool Sessio::conte_problema(string p) const {
+    set<string>::const_iterator it = sp.find(p);
+    if (it != sp.end()) return true;
+    else return false;
+}
+
+string Sessio::problemes_env() const {
+    return ap.value();
 }
 
 void Sessio::llegir() {

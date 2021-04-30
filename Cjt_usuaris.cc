@@ -16,9 +16,9 @@ void Cjt_usuaris::baixa_usuari(string u) {
     cout << mu.size() << endl;
 }
 
-void Cjt_usuaris::inscriure_curs(string u, int c) {
+void Cjt_usuaris::inscriure_curs(string u, int c, const Cjt_cursos& cu, const Cjt_sessions& se) {
     map<string, Usuari>::iterator it = mu.find(u);
-    it -> second.inscriure(c);
+    it -> second.inscriure(c, cu, se);
 }
 
 bool Cjt_usuaris::existeix_usuari(string u) const {
@@ -37,10 +37,12 @@ void Cjt_usuaris::curs_usuari(string u) const {
     map<string, Usuari>::const_iterator it = mu.find(u);
     it -> second.consulta_curs();
 }
-/*
-void Cjt_usuaris::problemes_resolts(string u) const {
-    
-}*/
+
+void Cjt_usuaris::problemes_enviables(string u) const {
+    map<string, Usuari>::const_iterator it = mu.find(u);
+    it -> second.problemes_env();
+}
+
 
 void Cjt_usuaris::llegir_usuaris() {
     int n;

@@ -20,6 +20,17 @@ bool Cjt_sessions::existeix_sessio(string s) const {
     else return false;
 }
 
+bool Cjt_sessions::sessio_problema(string s, string p) const {
+    map<string, Sessio>::const_iterator it = ms.find(s);
+    if (it -> second.conte_problema(p)) return true;
+    else return false;
+}
+
+string Cjt_sessions::problemes_env(string s) const {
+    map<string, Sessio>::const_iterator it = ms.find(s);
+    return it -> second.problemes_env();
+}
+
 void Cjt_sessions::llegir_sessions() {
     int n;
     cin >> n;

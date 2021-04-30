@@ -66,6 +66,16 @@ public:
       \post El resultat és el nombre de cursos del paràmetre implícit.
   */
   int mida() const;
+  
+  /** @brief Consulta si el problema p es troba al curs c. 
+      \pre <em>cert</em>
+      \post Indica si el curs c conté el problema p.
+  */
+  bool pertany_curs(int c, string p) const;
+  
+  void sessio_problema(int c, string p, const Cjt_sessions& se) const;
+  
+  void problemes_env(int c, vector<string>& vp, const Cjt_sessions& se) const;
     
     
   // Lectura i escriptura
