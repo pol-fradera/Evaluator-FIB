@@ -51,6 +51,8 @@ public:
   void nou_curs();
   
   void sumar_usuari(int c);
+  
+  void restar_usuari(int c);
       
   
     //Consultores

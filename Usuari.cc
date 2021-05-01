@@ -20,8 +20,8 @@ bool Usuari::esta_inscrit() const {
     else return true;
 }
 
-void Usuari::consulta_curs() const {
-    cout << id_curs << endl;
+int Usuari::consulta_curs() const {
+    return id_curs;
 }
 
 void Usuari::problemes_env() const {
@@ -31,10 +31,10 @@ void Usuari::problemes_env() const {
         ++it;
     }
 }
-
+/*
 void Usuari::problemes_resolts() const {
     
-}
+}*/
 
 void Usuari::escriure() const {
     cout << '(' << env_tot << ',' << pr_res << ',' << pr_int << ',' << id_curs << ')' << endl;

@@ -52,7 +52,7 @@ public:
       s'ha escrit pel canal estàndard de sortida el nombre d'usuaris del conjunt 
       després de ser eliminat del paràmetre implícit.
   */
-  void baixa_usuari(string u);
+  void baixa_usuari(string u, int& c);
   
   /** @brief S'apunta el resultat d'un nou enviament d'un usuari a un problema.
       \pre L'usuari amb identificador u està registrat i inscrit en un curs on 

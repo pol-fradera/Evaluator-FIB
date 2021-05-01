@@ -11,7 +11,9 @@ void Cjt_usuaris::alta_usuari(string u) {
     cout << mu.size() << endl;
 }
 
-void Cjt_usuaris::baixa_usuari(string u) {
+void Cjt_usuaris::baixa_usuari(string u, int& c) {
+    map<string, Usuari>::iterator it = mu.find(u);
+    c = it -> second.consulta_curs();
     mu.erase(u);
     cout << mu.size() << endl;
 }
@@ -35,7 +37,7 @@ bool Cjt_usuaris::esta_inscrit_nc(string u) const {
 
 void Cjt_usuaris::curs_usuari(string u) const {
     map<string, Usuari>::const_iterator it = mu.find(u);
-    it -> second.consulta_curs();
+    cout << it -> second.consulta_curs() << endl;
 }
 
 void Cjt_usuaris::problemes_enviables(string u) const {

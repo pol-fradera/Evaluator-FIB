@@ -53,6 +53,8 @@ public:
       \post El curs té un usuari més inscrit.
   */
   void sumar_usuari(); 
+  
+  void restar_usuari();
     
 
   //Consultores

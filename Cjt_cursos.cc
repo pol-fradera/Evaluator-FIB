@@ -24,6 +24,10 @@ void Cjt_cursos::sumar_usuari(int c) {
     vcurs[c-1].sumar_usuari();
 }
 
+void Cjt_cursos::restar_usuari(int c) {
+    vcurs[c-1].restar_usuari();
+}
+
 bool Cjt_cursos::existeix_curs(int c) const {
     if (c > 0 and c <= vcurs.size()) return true;
     else return false;

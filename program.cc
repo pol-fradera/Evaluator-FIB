@@ -62,7 +62,10 @@ int main() {
         else if (comanda == "b" or comanda == "baja_usuario") {
             cin >> u;
             cout << '#' << comanda << ' ' << u << endl;
-            if (us.existeix_usuari(u)) us.baixa_usuari(u);
+            if (us.existeix_usuari(u)) {
+                us.baixa_usuari(u, c);
+                if (c != 0) cu.restar_usuari(c);
+            }
             else cout << "error: el usuario no existe" << endl;
         }
         else if (comanda == "i" or comanda == "inscribir_curso") {

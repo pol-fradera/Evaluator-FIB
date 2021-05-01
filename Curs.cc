@@ -13,6 +13,10 @@ void Curs::sumar_usuari() {
     cout << us_ins << endl;
 }
 
+void Curs::restar_usuari() {
+    --us_ins;
+}
+
 int Curs::usuaris_inscrits() const {
     return us_ins;
 }

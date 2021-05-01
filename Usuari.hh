@@ -54,7 +54,7 @@ public:
   
   bool esta_inscrit() const;
   
-  void consulta_curs() const;
+  int consulta_curs() const;
   
   void problemes_resolts() const;
   
