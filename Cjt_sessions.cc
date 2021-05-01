@@ -34,10 +34,10 @@ string Cjt_sessions::problemes_env(string s) const {
 void Cjt_sessions::llegir_sessions() {
     int n;
     cin >> n;
-    Sessio se;
     for (int i = 0; i < n; ++i) {
         string s;
         cin >> s;
+        Sessio se;
         se.llegir();
         ms[s] = se;
     }

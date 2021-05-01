@@ -24,7 +24,9 @@ private:
   
   set<string> sp;
   
-  static int size(const BinTree<string>& a);
+  int num_prob;
+  
+//   static int size(const BinTree<string>& a);
   
   BinTree<string> llegir_bintree();
   

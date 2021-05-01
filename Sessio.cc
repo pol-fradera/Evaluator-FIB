@@ -4,18 +4,17 @@
 
 #include "Sessio.hh"
 
-Sessio::Sessio() {  }
-
-int Sessio::size(const BinTree<string>& a) {
-    if (a.empty()) return 0;
-    else return 1 + size(a.left()) + size(a.right());
+Sessio::Sessio() {  
+    num_prob = 0;
 }
+
 
 BinTree<string> Sessio::llegir_bintree() {
   string s;
   cin >> s;
-  sp.insert(s);
   if (s == "0") return BinTree<string> ();
+  sp.insert(s);
+  ++num_prob;  
   return BinTree<string> (s, llegir_bintree(), llegir_bintree());
 }
 
@@ -32,7 +31,7 @@ void Sessio::escriure_BinTree(const BinTree<string> &a)
 }
 
 int Sessio::mida() const {
-    return size(ap);
+    return num_prob;
 }
 
 bool Sessio::conte_problema(string p) const {
