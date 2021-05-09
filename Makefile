@@ -34,5 +34,5 @@ clean:
 	rm -f *.o
 	rm -f *.exe
 #
-program.tar: Makefile Doxyfile program.cc Cjt_problemes.hh Cjt_sessions.hh Cjt_cursos.hh Cjt_usuaris.hh Cjt_problemes.cc Cjt_sessions.cc Cjt_cursos.cc Cjt_usuaris.cc Problema.hh Sessio.hh Curs.hh Usuari.hh Problema.cc Sessio.cc Curs.cc Usuari.cc
-	tar -cvf program.tar Makefile Doxyfile program.cc Cjt_problemes.hh Cjt_sessions.hh Cjt_cursos.hh Cjt_usuaris.hh Cjt_problemes.cc Cjt_sessions.cc Cjt_cursos.cc Cjt_usuaris.cc Problema.hh Sessio.hh Curs.hh Usuari.hh Problema.cc Sessio.cc Curs.cc Usuari.cc
+practica.tar: Makefile program.cc Cjt_problemes.hh Cjt_sessions.hh Cjt_cursos.hh Cjt_usuaris.hh Cjt_problemes.cc Cjt_sessions.cc Cjt_cursos.cc Cjt_usuaris.cc Problema.hh Sessio.hh Curs.hh Usuari.hh Problema.cc Sessio.cc Curs.cc Usuari.cc
+	tar -cvf practica.tar Makefile program.cc Cjt_problemes.hh Cjt_sessions.hh Cjt_cursos.hh Cjt_usuaris.hh Cjt_problemes.cc Cjt_sessions.cc Cjt_cursos.cc Cjt_usuaris.cc Problema.hh Sessio.hh Curs.hh Usuari.hh Problema.cc Sessio.cc Curs.cc Usuari.cc

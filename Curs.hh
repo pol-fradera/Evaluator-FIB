@@ -41,6 +41,8 @@ public:
     
   //Modificadores
 
+  bool nou_curs(int n, const Cjt_sessions& se);
+
   /** @brief Afegeix sessions a un curs.
       \pre Està preparat al canal estàndard d'entrada el nombre de sessions Sc > 0 del curs 
       i una seqüència Sc d'identificadors de sessions, vàlids i sense repeticions.
@@ -55,6 +57,8 @@ public:
   void sumar_usuari(); 
   
   void restar_usuari();
+
+  void actualitzar_env(string p, string& p1, string& p2, const Cjt_sessions& se);
     
 
   //Consultores

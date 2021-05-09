@@ -9,6 +9,8 @@
 
 #ifndef NO_DIAGRAM
 #include <map>
+#include <algorithm>
+#include <vector>
 #endif
 
 /** @class Cjt_problemes
@@ -20,6 +22,8 @@ class Cjt_problemes {
 private:
   
   map<string, Problema> mp;
+
+  static bool ordre (const pair<string, Problema>& a, const pair<string, Problema>& b); 
 
 public:
 
@@ -43,6 +47,8 @@ public:
       després de ser afegit al paràmetre implícit.
   */  
   void nou_problema(string p);
+
+  void actualitzar_pr(string p, int r);
   
   
   //Consultores

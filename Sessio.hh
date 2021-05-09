@@ -23,6 +23,12 @@ private:
   BinTree<string> ap;
   
   set<string> sp;
+
+  map<string, pair<string, string>> mp;
+
+  static void recorrer_arbre(const BinTree<string> &a);
+
+  static void actualitzar_map(string s, const BinTree<string> &a1, const BinTree<string> &a2);
   
   int num_prob;
   
@@ -60,6 +66,8 @@ public:
       identificadors p.
   */
   void afegir_problemes();
+
+  bool actualitzar_env(string p, string& p1, string& p2);
     
   // Consultores
   
@@ -68,6 +76,8 @@ public:
   bool conte_problema(string p) const;
   
   string problemes_env() const;
+
+  bool interseccio(const Sessio& s2) const;
   
   
   // Escriptura

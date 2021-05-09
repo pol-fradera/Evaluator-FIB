@@ -18,6 +18,12 @@ void Cjt_usuaris::baixa_usuari(string u, int& c) {
     cout << mu.size() << endl;
 }
 
+void Cjt_usuaris::enviament(string u, string p, int r, Cjt_problemes& pr, const Cjt_cursos& cu, const Cjt_sessions& se) {
+    map<string, Usuari>::iterator it = mu.find(u);
+    it -> second.enviament(p, r);
+    pr.actualitzar_pr(p, r);
+}
+
 void Cjt_usuaris::inscriure_curs(string u, int c, const Cjt_cursos& cu, const Cjt_sessions& se) {
     map<string, Usuari>::iterator it = mu.find(u);
     it -> second.inscriure(c, cu, se);
@@ -38,6 +44,11 @@ bool Cjt_usuaris::esta_inscrit_nc(string u) const {
 void Cjt_usuaris::curs_usuari(string u) const {
     map<string, Usuari>::const_iterator it = mu.find(u);
     cout << it -> second.consulta_curs() << endl;
+}
+
+void Cjt_usuaris::problemes_resolts(string u) const {
+    map<string, Usuari>::const_iterator it = mu.find(u);
+    it -> second.problemes_res();
 }
 
 void Cjt_usuaris::problemes_enviables(string u) const {

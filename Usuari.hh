@@ -25,6 +25,7 @@ private:
   int env_tot, pr_res, pr_int, id_curs;
   
   map<string, int> mpr_env;
+  map<string, int> mpr_res;
 
 //   set<string> spr_env;
   
@@ -49,6 +50,8 @@ public:
   //Modificadores
   
   void inscriure(int c, const Cjt_cursos& cu, const Cjt_sessions& se);
+
+  void enviament(string p, int r, const Cjt_cursos& cu, const Cjt_sessions& se);
   
   // Consultores
   
@@ -56,7 +59,7 @@ public:
   
   int consulta_curs() const;
   
-  void problemes_resolts() const;
+  void problemes_res() const;
   
   void problemes_env() const;
   

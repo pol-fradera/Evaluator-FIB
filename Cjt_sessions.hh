@@ -44,6 +44,8 @@ public:
       després d'afegir-la al paràmetre implícit.
   */
   void nova_sessio(string s);
+
+  bool actualitzar_env(string s, string p, string& p1, string& p2);
       
   //Consultores
   
@@ -62,6 +64,8 @@ public:
   bool sessio_problema(string s, string p) const;
   
   string problemes_env(string s) const;
+
+  bool interseccio(string s1, string s2) const;
     
     
   // Lectura i escriptura

@@ -8,6 +8,25 @@ Curs::Curs() {
     us_comp = us_ins = 0;
 }
 
+bool Curs::nou_curs(int n, const Cjt_sessions& se) {
+    for (int i = 0; i < n; ++i) {
+        string s;
+        cin >> s;
+        vs.push_back(s);
+    }
+    bool correcte = true;
+    int i = 0;
+    while (correcte and i < n) {
+        int j = i + 1;
+        while (correcte and j < n) {
+            if (se.interseccio(vs[i], vs[j])) correcte = false; 
+            ++j;
+        }
+        ++i;
+    }
+    return correcte;
+}
+
 void Curs::sumar_usuari() {
     ++us_ins;
     cout << us_ins << endl;
@@ -16,6 +35,15 @@ void Curs::sumar_usuari() {
 void Curs::restar_usuari() {
     --us_ins;
 }
+
+void Curs::actualitzar_env(string p, string& p1, string& p2, const Cjt_sessions& se) {
+    bool trobat = false;
+    int i = 0;
+    while (not trobat) {
+        if (se.actualitzar_env(vs[i], p, p1, p2)) trobat = true;
+        ++i;
+    }
+} 
 
 int Curs::usuaris_inscrits() const {
     return us_ins;

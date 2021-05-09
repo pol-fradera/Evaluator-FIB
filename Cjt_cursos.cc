@@ -20,12 +20,27 @@ Cjt_cursos::Cjt_cursos() {}
   
 }*/
 
+void Cjt_cursos::nou_curs(const Cjt_sessions& se) {
+    int n;
+    cin >> n;
+    Curs c;
+    if (c.nou_curs(n, se)) {
+        vcurs.push_back(c);
+        cout << vcurs.size() << endl;
+    }
+    else cout << "error: curso mal formado" << endl;
+}
+
 void Cjt_cursos::sumar_usuari(int c) {
     vcurs[c-1].sumar_usuari();
 }
 
 void Cjt_cursos::restar_usuari(int c) {
     vcurs[c-1].restar_usuari();
+}
+
+void Cjt_cursos::actualitzar_env(int c, string p, string& p1, string& p2, const Cjt_sessions& se) {
+    vcurs[c-1].actualitzar_env(p, p1, p2, se);
 }
 
 bool Cjt_cursos::existeix_curs(int c) const {

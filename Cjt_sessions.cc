@@ -14,6 +14,12 @@ void Cjt_sessions::nova_sessio(string s) {
     cout << ms.size() << endl;
 }
 
+bool Cjt_sessions::actualitzar_env(string s, string p, string& p1, string& p2) {
+    map<string, Sessio>::const_iterator it = ms.find(s);
+    if (it -> second.actualitzar_env(p, p1, p2) return true;
+    else return false;
+}
+
 bool Cjt_sessions::existeix_sessio(string s) const {
     map<string, Sessio>::const_iterator it = ms.find(s);
     if (it != ms.end()) return true;
@@ -29,6 +35,13 @@ bool Cjt_sessions::sessio_problema(string s, string p) const {
 string Cjt_sessions::problemes_env(string s) const {
     map<string, Sessio>::const_iterator it = ms.find(s);
     return it -> second.problemes_env();
+}
+
+bool Cjt_sessions::interseccio(string s1, string s2) const {
+    map<string, Sessio>::const_iterator it1 = ms.find(s1);
+    map<string, Sessio>::const_iterator it2 = ms.find(s2);
+    if (it1 -> second.interseccio(it2 -> second)) return true;
+    else return false;
 }
 
 void Cjt_sessions::llegir_sessions() {

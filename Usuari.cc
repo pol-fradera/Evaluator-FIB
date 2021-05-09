@@ -15,6 +15,23 @@ void Usuari::inscriure(int c, const Cjt_cursos& cu, const Cjt_sessions& se) {
     for (int i = 0; i < vp.size(); ++i) mpr_env[vp[i]];
 }
 
+void Usuari::enviament(string p, int r, const Cjt_cursos& cu, const Cjt_sessions& se) {
+    ++env_tot;
+    map<string, int>::const_iterator it = mpr_env.find(p);
+    if (it -> second == 0) ++pr_int;
+    if (r == 0) ++mpr_env[p];
+    else {
+        mpr_res[p] = it -> second + 1;
+        mpr_env.erase(p);
+        ++pr_res;
+        string p1, p2;
+        cu.actualitzar_env(id_curs, p, p1, p2, se);
+        if (p1 != "0") mpr_env[p1];
+        if (p2 != "0") mpr_env[p2];
+    }
+    
+}
+
 bool Usuari::esta_inscrit() const {
     if (id_curs == 0) return false;
     else return true;
@@ -22,6 +39,14 @@ bool Usuari::esta_inscrit() const {
 
 int Usuari::consulta_curs() const {
     return id_curs;
+}
+
+void Usuari::problemes_res() const {
+    map<string, int>::const_iterator it = mpr_res.begin();
+    while (it != mpr_res.end()) {
+        cout << it -> first << '(' << it -> second << ')' << endl;
+        ++it;
+    }
 }
 
 void Usuari::problemes_env() const {

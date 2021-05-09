@@ -37,7 +37,7 @@ int main() {
     cin >> comanda;
     while (comanda != "fin") {
         string p, s, u;     // Identificador del problema, de la sessó i de l'usuari
-        int c; //r;   // Identificador del curs i nota del resultat de l'enviament
+        int c, r;   // Identificador del curs i nota del resultat de l'enviament
         if (comanda == "np" or comanda == "nuevo_problema") {
             cin >> p;
             cout << '#' << comanda << ' ' << p << endl;
@@ -49,10 +49,11 @@ int main() {
             cout << '#' << comanda << ' ' << s << endl;
             if (not se.existeix_sessio(s)) se.nova_sessio(s);     
             else cout << "error: la sesion ya existe" << endl;
-        }/*
+        }
         else if (comanda == "nc" or comanda == "nuevo_curso") {
-            cu.nou_curs();
-        }*/
+            cout << '#' << comanda << endl;
+            cu.nou_curs(se);
+        }
         else if (comanda == "a" or comanda == "alta_usuario") {
             cin >> u;
             cout << '#' << comanda << ' ' << u << endl;
@@ -97,22 +98,20 @@ int main() {
             cin >> u;
             cout << '#' << comanda << ' ' << u << endl;
             if (not us.existeix_usuari(u)) cout << "error: el usuario no existe" << endl;
+            else us.problemes_resolts(u);
         }
-            /*if (us.existeix_usuari(u)) us.problemes_resolts(u);
-            else cout << "error: el usuario no existe" << endl;
-        }*/
         else if (comanda == "pe" or comanda == "problemas_enviables") {
             cin >> u;
             cout << '#' << comanda << ' ' << u << endl;
             if (not us.existeix_usuari(u)) cout << "error: el usuario no existe" << endl;
             else if (not us.esta_inscrit_nc(u)) cout << "error: usuario no inscrito en ningun curso" << endl;
             else us.problemes_enviables(u);
-        }/*
+        }
         else if (comanda == "e" or comanda == "envio") {
             cin >> u >> p >> r;
-            if (us.existeix_usuari(u) and us.esta_inscrit_curs_pr(u, p) and us.compleix_requisit(u, p)) us.enviament(u, p, r);
-            else cout << " error" << endl;
-        } */           
+            cout << '#' << comanda << ' ' << u << ' ' << p << ' ' << r << endl;
+            us.enviament(u, p, r, pr, cu, se);
+        }       
         else if (comanda == "lp" or comanda == "listar_problemas") {
             cout << '#' << comanda << endl;
             pr.llistar_problemes();

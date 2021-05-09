@@ -40,6 +40,10 @@ public:
   */
   Problema(string p);
 
+
+  //Modificadores
+
+  void actualitzar(int r);
  
   //Consultores
 
@@ -60,7 +64,7 @@ public:
       \pre <em>cert</em>
       \post El resultat és la ràtio (t + 1)/(e + 1) del problema del paràmetre implícit.
   */
-  int consulta_ratio() const;
+  int consultar_ratio() const;
   
   
   // Escriptura

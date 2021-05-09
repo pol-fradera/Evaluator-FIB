@@ -60,7 +60,7 @@ public:
       enviar.
       \post S'han actualitzat les estadístiques de l'usuari i del problema.
   */
-  void enviament(string u, string p, int& r);
+  void enviament(string u, string p, int r, Cjt_problemes& pr, const Cjt_cursos& cu, const Cjt_sessions& se);
   
   /** @brief Inscriu un usuari en un curs.
       \pre El paràmetre implícit conté un usuari amb l'identificador u, el curs c 

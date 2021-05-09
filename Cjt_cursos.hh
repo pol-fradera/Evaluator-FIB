@@ -48,11 +48,13 @@ public:
       canal estàndard de sortida l'dentificador del nou curs. Altrament, s'ha escrit
       pel canal estàndard de sortida un missatge d'error.
   */  
-  void nou_curs();
+  void nou_curs(const Cjt_sessions& se);
   
   void sumar_usuari(int c);
   
   void restar_usuari(int c);
+
+  void actualitzar_env(int c, string p, string& p1, string& p2, const Cjt_sessions& se);
       
   
     //Consultores
