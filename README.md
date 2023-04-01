@@ -1,6 +1,6 @@
 # Evaluator-FIB
 
-- Project of the subject Programming-2.
+- Project of the subject Programming-2 (FIB).
 - The platform EVALUATOR integrates a:
   - Collection of programming problems.
   - Repository of sessions made up of problems from that collection.
